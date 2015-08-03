@@ -19,14 +19,7 @@ public class UserResource {
 		System.out.println("test");
 	}
 	
-    /**
-     * ユーザー一覧
-     * 
-     * @param searchText
-     *            検索文字列（ユーザーIDまたはユーザー名前）
-     * @return ユーザー情報リスト
-     * @throws Exception
-     */
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public void getUsers(@QueryParam("st") final String searchText,
