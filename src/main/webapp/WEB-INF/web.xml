@@ -6,7 +6,7 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
     version="2.4">
 
-    <display-name>AIRR Web Application System</display-name>
+    <display-name>WMS Web Application System</display-name>
     
     <!-- filter settting 
     <filter>
@@ -22,7 +22,7 @@
     <!-- context-param settting -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:airr-context.xml</param-value>
+        <param-value>classpath:wms-context.xml</param-value>
     </context-param>
        <!-- context-param settting 
     <context-param>
