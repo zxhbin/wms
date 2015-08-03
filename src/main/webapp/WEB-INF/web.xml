@@ -11,7 +11,7 @@
     <!-- filter settting 
     <filter>
         <filter-name>Security Filter</filter-name>
-        <filter-class>jp.co.fujixerox.airr.filter.AirrFilter</filter-class>
+        <filter-class>jp.co.fujixerox.wms.filter.AirrFilter</filter-class>
     </filter>
     
     <filter-mapping>
@@ -28,7 +28,7 @@
     <context-param>
         <param-name>resteasy.providers</param-name>
         <param-value>
-            jp.co.fujixerox.airr.common.ContextExceptionMapper
+            jp.co.fujixerox.wms.common.ContextExceptionMapper
         </param-value>
     </context-param>-->
     <context-param>
@@ -46,7 +46,7 @@
     <!-- listener settting 
     <listener>
         <listener-class>
-            jp.co.fujixerox.airr.listener.AirrSessionListener
+            jp.co.fujixerox.wms.listener.AirrSessionListener
         </listener-class>
     </listener>
     -->
@@ -63,12 +63,12 @@
     <!-- servlet settting 
     <servlet>
         <servlet-name>login</servlet-name>
-        <servlet-class>jp.co.fujixerox.airr.servlet.LoginServlet</servlet-class>
+        <servlet-class>jp.co.fujixerox.wms.servlet.LoginServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>logout</servlet-name>
-        <servlet-class>jp.co.fujixerox.airr.servlet.LogoutServlet</servlet-class>
+        <servlet-class>jp.co.fujixerox.wms.servlet.LogoutServlet</servlet-class>
     </servlet>
 -->
     <servlet>
