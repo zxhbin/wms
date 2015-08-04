@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
         StringReader reader = null;
         try {
             if (StringUtils.isBlank(userID) || StringUtils.isBlank(pwd)) {
-                logger.error("認証に失敗しました.");
+                logger.error("认证失败。");
                 resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             } else {
                 UserDao userDao = SpringConfig.getUserDao();
@@ -41,12 +41,12 @@ public class LoginServlet extends HttpServlet {
                 try {
                     md5Pwd = Util.EncoderByMd5(pwd);
                 } catch (NoSuchAlgorithmException e) {
-                    logger.error("認証に失敗しました:" + e.getMessage());
+                    logger.error("认证失败:" + e.getMessage());
                     resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 }
                 User user = userDao.query(userID, md5Pwd);
                 if (StringUtils.isBlank(user.getUserId())) {
-                    logger.error("認証に失敗しました.");
+                    logger.error("认证失败。");
                     resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 } else {
                     HttpSession session = req.getSession(true);
@@ -64,7 +64,7 @@ public class LoginServlet extends HttpServlet {
                 }
             }
         } catch (Exception ex) {
-            logger.error("認証に失敗しました:" + ex.getMessage());
+            logger.error("认证失败:" + ex.getMessage());
             resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         } finally {
             IOUtils.closeQuietly(out);
