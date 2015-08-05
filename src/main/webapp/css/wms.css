@@ -2,3 +2,23 @@
 	color:red;
 	width:330px;
 }
+.input-icon {
+    border-left: 2px solid #35AA47 !important;
+    overflow: hidden;
+    position: relative;
+}
+.input-icon > span {
+    color: #CCC;
+    display: block;
+    position: absolute;
+    margin: 11px 2px 4px 10px;
+    z-index: 3;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    text-align: center;
+}
+.login-input{
+	border-left: 0px none;
+	padding-left: 33px;
+}
