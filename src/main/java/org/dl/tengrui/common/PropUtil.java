@@ -1,57 +1,55 @@
 package org.dl.tengrui.common;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import javax.ws.rs.WebApplicationException;
 
-import org.apache.log4j.Logger;
+public class PropUtil {
 
-/**
- * Property Util Class
- * 
- * @author echp
- * @version 1.0
- */
-public class PropUtil extends Properties {
+	private static final String default_http_prop_path = "/wms.properties";
+	private static final String SYSTEM_EXCEL_TEMPLATE_PATH;
+	
+	static {
+		
+		Properties httpProp = getClassHttpProperties();	
+	
+		SYSTEM_EXCEL_TEMPLATE_PATH = httpProp.getProperty("sys.template.excel.path");
+	}
+	
+	/**
+	 * @return the systemExcelTemplatePath
+	 */
+	public static String getSystemExcelTemplatePath() {
+		return SYSTEM_EXCEL_TEMPLATE_PATH;
+	}
 
-    /** log object **/
-    private static final Logger logger = Logger.getLogger(PropUtil.class);
-    private static final long serialVersionUID = 1L;
-    /** PropUtil Instance **/
-    private static PropUtil instance;
-
-    /**
-     * Constructor
-     */
-    private PropUtil() {
-        InputStream is = null;
-        is = getClass().getResourceAsStream("/wms.properties");
-        try {
-            load(is);
-        } catch (Exception e) {
-            logger.error(e.getMessage());
-            throw new WebApplicationException();
-        }
-    }
-
-    /**
-     * Get Property util instance
-     * 
-     * @return PropUtil
-     */
-    public static PropUtil getInstance() {
-        if (instance == null)
-            makeInstance();
-        return instance;
-    }
-
-    /**
-     * make instance
-     */
-    private static synchronized void makeInstance() {
-        if (instance == null)
-            instance = new PropUtil();
-    }
-
+	private static Properties getClassHttpProperties() {
+		ClassLoader cl = null;
+		try {
+			cl = Thread.currentThread().getContextClassLoader();
+		} catch (Throwable ex) {
+			// Cannot access thread context ClassLoader - falling back to system
+			// class loader...
+		}
+		if (cl == null) {
+			// No thread context class loader -> use class loader of this class.
+			cl = PropUtil.class.getClassLoader();
+		}
+		Properties prop = new Properties();
+		InputStream is = cl.getResourceAsStream(default_http_prop_path);
+		if (is == null) {
+			is = cl.getClass().getResourceAsStream(default_http_prop_path);
+		}
+		if (is == null) {
+			return prop;
+		}
+ 		try {
+			prop.load(is);
+		} catch (IOException e) {
+			return prop;
+		}
+		return prop;
+	}
+	
 }
