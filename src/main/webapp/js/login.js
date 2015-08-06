@@ -31,7 +31,7 @@ $(document).ready(function() {
 	$("#loginForm").formloader({
 		data : {}
 	}).validate({
-		errorElement : 'span',
+		errorElement : 'label',
 		errorClass : 'help-block',
 		focusInvalid : false,
 		rules : {
