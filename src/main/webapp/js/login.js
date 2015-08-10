@@ -73,6 +73,7 @@ $(document).ready(function() {
 //				}
 //			};
 			var dataform = $(form);
+			document.location.href="home.htm";
 			//$.fn.postData(getConfig().sendUrl, dataform.serialize(), cb);
 		}
 	});
