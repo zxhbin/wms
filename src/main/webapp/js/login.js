@@ -64,18 +64,34 @@ $(document).ready(function() {
 			error.insertAfter(element);
 		},
 		submitHandler : function(form) {
-//			clearInterval(broadcastTime);
-//			var cb = function(data) {
-//				if (data.success) {
-//					$.fn.showSuccess("发送成功。");
-//				} else {
-//					$.fn.showError("发送失败。");
-//				}
-//			};
-			var dataform = $(form);
-			document.location.href="home.htm";
-			//$.fn.postData(getConfig().sendUrl, dataform.serialize(), cb);
+
+			doLogin($('#txtUserID').val(), $('#txtPwd').val());
 		}
 	});
         
     });
+
+var doLogin = function(uid, pwd) {
+    jQuery.ajax({
+        beforeSend : function(xhr) {
+            xhr.setRequestHeader("userId", uid);
+            xhr.setRequestHeader("password", pwd);
+        },
+        type : "POST",
+        url : "./login",
+        error : function(XMLHttpRequest) {
+        	$('.alert-danger').removeClass("hide");
+            $("#txtUserID").val("");
+            $("#txtPwd").val("");
+            $("#txtUserID").focus(); 
+           
+        },
+        success : function(data, status) {
+        	$('.alert-danger').addClass("hide");
+            sessionStorage.setItem("AIRR_USERID", uid);
+            sessionStorage.setItem("AIRR_USER_NAME", data.user_name);
+
+            location.href = "home.htm";
+        }
+    });
+};
