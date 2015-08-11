@@ -8,16 +8,16 @@
 
     <display-name>WMS Web Application System</display-name>
     
-    <!-- filter settting 
+
     <filter>
-        <filter-name>Security Filter</filter-name>
-        <filter-class>jp.co.fujixerox.wms.filter.AirrFilter</filter-class>
+        <filter-name>Session Filter</filter-name>
+        <filter-class>org.dl.tengrui.filter.SessionFilter</filter-class>
     </filter>
     
     <filter-mapping>
-        <filter-name>Security Filter</filter-name>
+        <filter-name>Session Filter</filter-name>
         <url-pattern>/api/*</url-pattern>
-    </filter-mapping>-->
+    </filter-mapping>
     
     <!-- context-param settting -->
     <context-param>
