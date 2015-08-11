@@ -1,29 +1,10 @@
 $(document).ready(function() {
-        $("#txtPwd").keydown(function(e){
-            if(e.keyCode==13){
-                $("#btnLogin").click();
-            }
-        });
-//        $('#login_err_show').text("");
-//        //
-//        $('#btnLogin').click(function($e) {
-//            var userid = $.trim($("#txtUserID").val());
-//            var userpwd = $.trim($("#txtPwd").val());
-//            // 
-//            if (!userid) {
-//                $('#login_err_show').text("登录的用户名不能为空");
-//                $("#txtUserID").focus();
-//                return;
-//            }
-//            if (!userpwd) {
-//                $('#login_err_show').text("密码不能为空");
-//                $("#txtPwd").focus();
-//                return;
-//            }
-//            
-//            
-//            //doLogin(userid, userpwd);
-//        });
+    $("#txtPwd").keydown(function(e){
+        if(e.keyCode==13){
+            $("#btnLogin").click();
+        }
+    });
+
 	$('#btnLogin').click(function($e) {
 		$("#loginForm").submit();
 	});
@@ -69,7 +50,7 @@ $(document).ready(function() {
 		}
 	});
         
-    });
+ });
 
 var doLogin = function(uid, pwd) {
     jQuery.ajax({
@@ -88,8 +69,8 @@ var doLogin = function(uid, pwd) {
         },
         success : function(data, status) {
         	$('.alert-danger').addClass("hide");
-            sessionStorage.setItem("AIRR_USERID", uid);
-            sessionStorage.setItem("AIRR_USER_NAME", data.user_name);
+            sessionStorage.setItem("USER_ID", uid);
+            sessionStorage.setItem("USER_NAME", data.user_name);
 
             location.href = "home.htm";
         }
