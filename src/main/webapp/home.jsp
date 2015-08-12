@@ -28,7 +28,7 @@
 	          <a class="navbar-brand" href="#">仓库管理系统</a>
 	        </div>
 	        <div class="collapse navbar-collapse">
-	          <p class="navbar-text navbar-right">登录者：<strong><span id="loginName"></span></strong></p>
+	          <p class="navbar-text navbar-right">登录者：<strong><span id="loginName"></span></strong><button type="button" id="btnLogout" class="btn btn-link">退出</button></p>
 	          <ul class="nav navbar-nav">
 	            <li>
 	            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">出入库管理<b class="caret"></b></a>
