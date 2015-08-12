@@ -72,7 +72,7 @@ var doLogin = function(uid, pwd) {
             sessionStorage.setItem("USER_ID", uid);
             sessionStorage.setItem("USER_NAME", data.user_name);
 
-            location.href = "home.htm";
+            location.href = "home.jsp";
         }
     });
 };
