@@ -1,6 +1,6 @@
 <%@ page language="java" pageEncoding="UTF-8" contentType="text/html;charset=utf-8"%>
  <!DOCTYPE html>
-    <html lang="zh-Hans-CN">
+ <html lang="zh-Hans-CN">
     <head>
 	    <meta charset="utf-8"></meta>
 	    <meta content="IE=edge" http-equiv="X-UA-Compatible"></meta>

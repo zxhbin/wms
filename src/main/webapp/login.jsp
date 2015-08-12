@@ -1,5 +1,6 @@
 <%@ page language="java" pageEncoding="UTF-8" contentType="text/html;charset=utf-8"%>
 <!DOCTYPE html>
+<html lang="zh-Hans-CN">
 <!-- 响应式支持 -->
 <meta charset="utf-8"/>
 <title>登录</title>
@@ -46,8 +47,6 @@
     <script src="js/lib/jquery-validation/js/jquery.validate.min.js" type="text/javascript" ></script>
     <script src="js/lib/jquery.form.js" type="text/javascript"></script>
     <script src="js/login.js" type="text/javascript"></script>
-    <script src="js/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-
-   
+    <script src="js/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>   
 </body>
 </html>
