@@ -22,3 +22,22 @@
 	border-left: 0px none;
 	padding-left: 33px;
 }
+
+
+.tabbable-line > .nav-tabs > li {
+    margin-right: 2px;  
+}
+
+.tabbable-line > .nav-tabs > li.active {
+    border-bottom: 4px solid #F3565D;
+    position: relative;
+}
+
+.nav-tabs > li {
+    float: left;
+    margin-bottom: -1px;
+}
+.nav > li {
+    position: relative;
+    display: block;
+}
