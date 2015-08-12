@@ -3,7 +3,7 @@
 	
 <div class="tabbable-line">
 		<ul class="nav nav-tabs ">
-			<li class="active" >
+			<li>
 				<a aria-expanded="true" href="#tab_1_1" data-toggle="tab">
 				入库单管理 </a>
 			</li>
