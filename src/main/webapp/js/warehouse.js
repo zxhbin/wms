@@ -3,9 +3,8 @@ $(document).ready(function() {
 	$('#loginName').text(sessionStorage.getItem("USER_NAME"));
 	
 	$('#btnLogout').click(function(e) {
-		sessionStorage.removeItem("USER_ID");
-        sessionStorage.removeItem("USER_NAME");
-        location.href = "login.jsp";
+		
+		doLogout();
 	});
 	
 	$('.js_sub_menu').click(function(e) {		
@@ -21,3 +20,14 @@ $(document).ready(function() {
 	obj.first().trigger('click');
 	
 });
+
+var doLogout = function() {
+	sessionStorage.removeItem("USER_ID");
+    sessionStorage.removeItem("USER_NAME");
+    
+    jQuery.ajax({
+        type : "POST",
+        url : "./logout"
+    });
+    location.href = "login.jsp";
+};
