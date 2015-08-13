@@ -19,6 +19,16 @@ $(document).ready(function() {
 	var obj = $('.nav-tabs').find('a[data-toggle="tab"]');
 	obj.first().trigger('click');
 	
+	var data = {
+			name: "warehouse.jsp"
+	};
+	
+	var pagefn = doT.template(document.getElementById('menutmpl').text);
+	$('#wms-menus').html(pagefn(data));	
+	
+	var contentfn = doT.template(document.getElementById('contenttmpl').text);
+	$('#wms-content').html(contentfn(data));
+	
 });
 
 var doLogout = function() {

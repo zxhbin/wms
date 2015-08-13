@@ -12,13 +12,15 @@
 	
 	    <link href="js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />	
 	    <link rel="stylesheet" href="css/sticky-footer-navbar.css"></link> 
-	    <link rel="stylesheet" href="css/wms.css"></link> 
-    </head>
-    <body>
-
-	  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	      <div class="container">
-	        <div class="navbar-header">
+	    <link rel="stylesheet" href="css/wms.css"></link>
+	    		
+        <script src="js/lib/jquery-1.11.0.min.js" type="text/javascript"></script>
+        <script src="js/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/lib/doT.min.js" type="text/javascript"></script>
+        <script src="js/warehouse.js" type="text/javascript"></script>
+        
+	    <script id="menutmpl" type="text/x-dot-template">
+			<div class="navbar-header">
 	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 	            <span class="sr-only">Toggle navigation</span>
 	            <span class="icon-bar"></span>
@@ -71,14 +73,27 @@
 	              </ul>
 	            </li>
 	          </ul>
-	        </div><!--/.nav-collapse -->
+	        </div>
+		</script> 
+		 <script id="contenttmpl" type="text/x-dot-template">
+			{{? it.name == "warehouse.jsp" }}
+				<jsp:include page="warehouse.jsp" flush="true" />
+			{{??}}
+				没有内容
+			{{?}}
+		 </script>
+    </head>
+    <body>
+
+	  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	      <div class="container" id="wms-menus">	
 	      </div>
 	    </div>
          <!--
           Begin page content 
          -->
-        <div class="container">
-     		<jsp:include page="warehouse.jsp" flush="true" />
+        <div class="container" id="wms-content">
+     		
 	    </div>
 	    <!--
           footer 
@@ -88,10 +103,7 @@
 	      	  <p class="text-muted">CopyRight 2015 v1.0.0.0 Dalian</p>
 	       </div>
 	    </div>
-		
-        <script src="js/lib/jquery-1.11.0.min.js" type="text/javascript"></script>
-        <script src="js/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/warehouse.js" type="text/javascript"></script>
+
     </body>
 </html>
 
