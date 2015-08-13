@@ -1,4 +1,11 @@
 $(document).ready(function() {
+
+	var menuData = {
+			datas: ""
+	};	
+	
+	var pagefn = doT.template(document.getElementById('menutmpl').text);
+	$('#wms-menus').html(pagefn(menuData));	
 	
 	$('#loginName').text(sessionStorage.getItem("USER_NAME"));
 	
@@ -16,18 +23,31 @@ $(document).ready(function() {
 		$(this).addClass('active');
 	});
 	
+	$('.js_ware').click(function() {
+		$('#wms-content').html("");
+		
+		var data = {
+				name: "warehouse.jsp"
+		};	
+		
+		var contentfn = doT.template(document.getElementById('contenttmpl').text);
+		$('#wms-content').html(contentfn(data));
+	});
+	
+	$('.js_delivery').click(function(e) {
+		$('#wms-content').html("");
+		
+		var data = {
+				name: "delivery.jsp"
+		};	
+		
+		var contentfn = doT.template(document.getElementById('contenttmpl').text);
+		$('#wms-content').html(contentfn(data));
+	});
+	
+	
 	var obj = $('.nav-tabs').find('a[data-toggle="tab"]');
-	obj.first().trigger('click');
-	
-	var data = {
-			name: "warehouse.jsp"
-	};
-	
-	var pagefn = doT.template(document.getElementById('menutmpl').text);
-	$('#wms-menus').html(pagefn(data));	
-	
-	var contentfn = doT.template(document.getElementById('contenttmpl').text);
-	$('#wms-content').html(contentfn(data));
+	obj.first().trigger('click');		
 	
 });
 
