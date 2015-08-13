@@ -4,11 +4,11 @@
 		<ul class="nav nav-tabs ">
 			<li>
 				<a aria-expanded="true" href="#tab_1_1" data-toggle="tab">
-				入库单管理 </a>
+				出库单管理 </a>
 			</li>
 			<li class="">
 				<a aria-expanded="false" href="#tab_1_2" data-toggle="tab">
-				入库单审核</a>
+				出库单审核</a>
 			</li>
 		</ul>
 		<div class="tab-content">
