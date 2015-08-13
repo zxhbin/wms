@@ -35,11 +35,11 @@
 	            <li>
 	            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">出入库管理<b class="caret"></b></a>
 	            	<ul class="dropdown-menu">
-		                <li  class="js_sub_menu"><a href="#">入库管理</a></li>
+		                <li class="js_sub_menu js_ware"><a href="#">入库管理</a></li>
 		                <li class="divider"></li>
-		                <li  class="js_sub_menu"><a href="#">出库管理</a></li>
+		                <li class="js_sub_menu js_delivery"><a href="#">出库管理</a></li>
 		                <li class="divider"></li>
-		                <li  class="js_sub_menu"><a href="#">库存管理</a></li>
+		                <li class="js_sub_menu"><a href="#">库存管理</a></li>
 	              </ul>
 	            </li>
 	            <li>
@@ -78,6 +78,8 @@
 		 <script id="contenttmpl" type="text/x-dot-template">
 			{{? it.name == "warehouse.jsp" }}
 				<jsp:include page="warehouse.jsp" flush="true" />
+			{{?? it.name == "delivery.jsp"}}
+				<jsp:include page="delivery.jsp" flush="true" />
 			{{??}}
 				没有内容
 			{{?}}
