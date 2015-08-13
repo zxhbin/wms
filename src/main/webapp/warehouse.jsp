@@ -1,5 +1,4 @@
-<%@ page language="java" pageEncoding="UTF-8"
-	contentType="text/html;charset=utf-8"%>
+<%@ page language="java" pageEncoding="UTF-8" contentType="text/html;charset=utf-8"%>
 	
 <div class="tabbable-line">
 		<ul class="nav nav-tabs ">
