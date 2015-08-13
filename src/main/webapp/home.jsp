@@ -17,7 +17,7 @@
         <script src="js/lib/jquery-1.11.0.min.js" type="text/javascript"></script>
         <script src="js/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/lib/doT.min.js" type="text/javascript"></script>
-        <script src="js/warehouse.js" type="text/javascript"></script>
+        <script src="js/home.js" type="text/javascript"></script>
         
 	    <script id="menutmpl" type="text/x-dot-template">
 			<div class="navbar-header">
@@ -94,8 +94,12 @@
          <!--
           Begin page content 
          -->
-        <div class="container" id="wms-content">
-     		
+        <div class="container">
+        	<div class="col-md-1"></div>
+			<div id="wms-content" class="col-md-10" style="border-bottom:1px solid #dddddd;border-left:1px solid #dddddd;border-right:1px solid #dddddd;overflow: auto;"">
+				
+			</div>
+			<div class="col-md-1"></div>
 	    </div>
 	    <!--
           footer 
