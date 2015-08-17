@@ -32,6 +32,9 @@ $(document).ready(function() {
 		
 		var contentfn = doT.template(document.getElementById('contenttmpl').text);
 		$('#wms-content').html(contentfn(data));
+		
+		var obj = $('.nav-tabs').find('a[data-toggle="tab"]');
+		obj.first().trigger('click');	
 	});
 	
 	$('.js_delivery').click(function(e) {
@@ -43,6 +46,9 @@ $(document).ready(function() {
 		
 		var contentfn = doT.template(document.getElementById('contenttmpl').text);
 		$('#wms-content').html(contentfn(data));
+		
+		var obj = $('.nav-tabs').find('a[data-toggle="tab"]');
+		obj.first().trigger('click');	
 	});
 	
 	
