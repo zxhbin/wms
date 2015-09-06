@@ -20,11 +20,13 @@ public class UserService {
     public List<User> getUsers(String searchText, String userId)
             throws Exception {
         List<User> userList = null;
+        
         if (StringUtils.isNotBlank(searchText)) {
            // userList = userDao.queryByPara(userId, searchText);
         } else {
             userList = userDao.query(userId);
         }
+        
         return userList;
     }
     
