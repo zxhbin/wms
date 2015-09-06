@@ -18,6 +18,7 @@
         <script src="js/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/lib/doT.min.js" type="text/javascript"></script>
         <script src="js/home.js" type="text/javascript"></script>
+        <script src="js/user.js" type="text/javascript"></script>
         
 	    <script id="menutmpl" type="text/x-dot-template">
 			<div class="navbar-header">
