@@ -17,14 +17,14 @@ public class UserService {
     @Autowired
     private UserDao userDao;
     
-    public List<User> getUsers(String searchText, String userId)
+    public List<User> getUsers(long start, long amount, String searchText)
             throws Exception {
         List<User> userList = null;
         
         if (StringUtils.isNotBlank(searchText)) {
            // userList = userDao.queryByPara(userId, searchText);
         } else {
-            userList = userDao.query(userId);
+            userList = userDao.query(start, amount);
         }
         
         return userList;

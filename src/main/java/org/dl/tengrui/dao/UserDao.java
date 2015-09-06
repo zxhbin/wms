@@ -50,9 +50,9 @@ public class UserDao {
     public static final String DB_USER_EMAIL = "email";
     
 
-    public List<User> query(final String userID) {
+    public List<User> query(long start, long amount) {
 
-        String SQL_QUERY = "select * from user where user_id != ? order by user_id";
+        String SQL_QUERY = "select * from user order by user_id limit ? offset ?";
 
         if (logger.isDebugEnabled()) {
             logger.debug(SQL_QUERY);
@@ -60,7 +60,7 @@ public class UserDao {
 
         final List<User> listAllUsers = new ArrayList<User>();
 
-        jdbcTemplate.query(SQL_QUERY, new Object[] {userID },
+        jdbcTemplate.query(SQL_QUERY, new Object[] {amount, start},
                 new ResultSetExtractor<Object>() {
                     public Object extractData(ResultSet rs)
                             throws SQLException, DataAccessException {
