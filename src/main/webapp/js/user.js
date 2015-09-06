@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 //生成表数据
 function loadUserTable(name) {
-	datatable = $('#chat_group_table')
+$('#user_table')
 			.dataTable(
 					{
 						"bDestroy" : true,
@@ -22,9 +22,9 @@ function loadUserTable(name) {
 						},
 						"aoColumns" : [
 								{
-									mData : 'id',
+									mData : 'userId',
 									bSortable : false,
-									sTitle : '群组ID',
+									sTitle : '用户ID',
 									sDefault : '',
 									mRender : function(data, type, full) {
 										var template ='<a href="javascript:void(0);" onclick="editApp(DBID_)"><span>' + "ld-group-" 
@@ -34,9 +34,9 @@ function loadUserTable(name) {
 									}
 								},
 								{
-									mData : 'name',
+									mData : 'userName',
 									bSortable : false,
-									sTitle : '群组名称',
+									sTitle : '用户名称',
 									sDefault : '',
 									mRender : function(data, type, full) {
 										var template = '<span>' + data
@@ -45,37 +45,15 @@ function loadUserTable(name) {
 												full.name);
 									}
 								},
+								
 								{
-									mData : 'createUserName',
-									bSortable : false,
-									sTitle : '创建者',
-									sDefault : '',
-									mRender : function(data, type, full) {
-										var template = '<span>' + data
-												+ '</span>';
-										return template;
-									}
-								},
-								{
-									mData : 'createTimeStr',
-									bSortable : false,
-									sTitle : '创建时间',
-									sDefault : '',
-									mRender : function(data, type, full) {
-										var template = '<span>' + data
-												+ '</span>';
-										return template;
-									}
-								},
-								{
-									mData : 'id',
+									mData : 'userId',
 									bSortable : false,
 									sTitle : '操作',
 									sDefault : '',
 									mRender : function(data, type, full) {
 										var template = '&nbsp;&nbsp;<a class="btn blue btn-xs" href="#" onclick="editApp(DBID_);">编辑</a>';
 										template += '&nbsp;&nbsp;<a class="btn blue btn-xs" href="#" onclick="getConfirm(DBID_);">删除</a>';
-										template += '&nbsp;&nbsp;<a class="btn blue btn-xs" href="#" onclick="getChatGroupUser(DBID_);">显示群成员</a>';
 										return template = template.replace(
 												/DBID_/g, full.id);
 									}
