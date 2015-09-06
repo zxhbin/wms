@@ -32,6 +32,8 @@ public class SessionFilter implements Filter{
         String path = url.substring(url.lastIndexOf("/"));
         if(path.contains("/api/") && session.getAttribute("USER_ID") == null) {
         	httpResponse.sendRedirect(loginUrl);
+        } else {
+        	 chain.doFilter(request, response);
         }
 		
 	}

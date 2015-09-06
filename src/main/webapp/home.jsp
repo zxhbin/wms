@@ -16,6 +16,7 @@
 	    		
         <script src="js/lib/jquery-1.11.0.min.js" type="text/javascript"></script>
         <script src="js/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/lib/data-tables/jquery.dataTables.min.js" type="text/javascript" ></script>
         <script src="js/lib/doT.min.js" type="text/javascript"></script>
         <script src="js/home.js" type="text/javascript"></script>
         <script src="js/user.js" type="text/javascript"></script>
