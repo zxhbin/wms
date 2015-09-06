@@ -4,6 +4,7 @@ package org.dl.tengrui.service;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.dl.tengrui.dao.UserDao;
 import org.dl.tengrui.entity.User;
@@ -19,7 +20,7 @@ public class UserService {
     public List<User> getUsers(String searchText, String userId)
             throws Exception {
         List<User> userList = null;
-        if (searchText != null) {
+        if (StringUtils.isNotBlank(searchText)) {
            // userList = userDao.queryByPara(userId, searchText);
         } else {
             userList = userDao.query(userId);
