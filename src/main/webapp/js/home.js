@@ -51,6 +51,23 @@ $(document).ready(function() {
 		obj.first().trigger('click');	
 	});
 	
+	$('.js_user').click(function(e){
+		
+	    $('#wms-content').html("");
+		
+		var data = {
+				name: "user.jsp"
+		};		
+	    
+		var contentfn = doT.template(document.getElementById('contenttmpl').text);
+		$('#wms-content').html(contentfn(data));
+		
+		var obj = $('.nav-tabs').find('a[data-toggle="tab"]');
+		obj.first().trigger('click');
+	}
+			
+	);
+	
 	
 	var obj = $('.nav-tabs').find('a[data-toggle="tab"]');
 	obj.first().trigger('click');		

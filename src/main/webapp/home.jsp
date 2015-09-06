@@ -65,7 +65,7 @@
 	              	</ul>
 	            </li>
 	            <li>
-	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">物品管理 <b class="caret"></b></a>
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">商品管理 <b class="caret"></b></a>
 	              <ul class="dropdown-menu">
 	                <li  class="js_sub_menu"><a href="#">物品管理 </a></li>
 	                <li class="divider"></li>
@@ -90,6 +90,8 @@
 				<jsp:include page="warehouse.jsp" flush="true" />
 			{{?? it.name == "delivery.jsp"}}
 				<jsp:include page="delivery.jsp" flush="true" />
+			{{?? it.name == "user.jsp"}}
+				<jsp:include page="user.jsp" flush="true" />
 			{{??}}
 				没有内容
 			{{?}}
