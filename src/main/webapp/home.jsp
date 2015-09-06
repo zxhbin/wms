@@ -72,6 +72,16 @@
 	                <li  class="js_sub_menu"><a href="#">物品组管理 </a></li>
 	              </ul>
 	            </li>
+			   <li>
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户管理 <b class="caret"></b></a>
+	              <ul class="dropdown-menu">
+	                <li  class="js_sub_menu js_user"><a href="#">用户管理 </a></li>
+	                <li class="divider"></li>
+	                <li  class="js_sub_menu"><a href="#">用户组管理 </a></li>
+					<li class="divider"></li>
+	                <li  class="js_sub_menu"><a href="#">用户组权限管理 </a></li>
+	              </ul>
+	            </li>
 	          </ul>
 	        </div>
 		</script> 
@@ -96,7 +106,7 @@
          -->
         <div class="container">
         	<div class="col-md-1"></div>
-			<div id="wms-content" class="col-md-10" style="border-bottom:1px solid #dddddd;border-left:1px solid #dddddd;border-right:1px solid #dddddd;overflow: auto;"">
+			<div id="wms-content" class="col-md-10" style="border-bottom:1px solid #dddddd;border-left:1px solid #dddddd;border-right:1px solid #dddddd;overflow: auto;">
 				
 			</div>
 			<div class="col-md-1"></div>
@@ -106,7 +116,7 @@
          -->
 	    <div id="footer">
 	       <div class="container">
-	      	  <p class="text-muted">CopyRight 2015 v1.0.0.0 Dalian</p>
+	      	  <p class="text-muted">CopyRight 2015 v1.0.0.0 Dalian TengRui</p>
 	       </div>
 	    </div>
 
