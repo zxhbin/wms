@@ -31,4 +31,19 @@
 				</div>
 			</div>			
 		</div>
+		<div class="modal fade" id="confirmModalForUser" tabindex="-1" role="confirmModal" aria-hidden="true"
+			style="width: 500px;padding-left:auto; padding-right: auto; margin-top: 150px;">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+				<h3>操作提示</h3>
+			</div>
+			<div class="modal-body">
+				<p class="fs16">确定删除该条记录吗？</p>
+				<input type="hidden" id="userId" />
+			</div>
+			<div class="modal-footer">
+				<button data-dismiss="modal" class="btn blue confirm" onclick="removeText()">确定</button>
+				<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+			</div>
+		</div>
 </div>

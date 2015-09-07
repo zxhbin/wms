@@ -1238,21 +1238,6 @@ Chats
 }
 
 /***
-Customized Bootstrap Close Icon 
-***/
-.close {
-  display: inline-block;
-  margin-top: 0px;
-  margin-right: 0px;
-  width: 9px;
-  height: 9px;
-  background-repeat: no-repeat !important;
-  text-indent: -10000px;
-  outline: none;
-  background-image: url("../img/remove-icon-small.png") !important;
-}
-
-/***
 Customized Bootstrap Dropdowns
 ***/
 /***
@@ -2519,6 +2504,7 @@ Customized Bootstrap Modal
 }
 .modal .modal-header {
   border-bottom: 1px solid #EFEFEF;
+  padding:0px;
 }
 .modal .modal-header h3 {
   font-weight: 300;

@@ -10,10 +10,12 @@
 	    <link href="img/logo.png" rel="shortcut icon"></link>
 	    <title>仓库管理系统 </title>
 	
-	    <link href="js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />	
-	    <link rel="stylesheet" href="css/sticky-footer-navbar.css"></link> 
+	    <link rel="stylesheet" href="js/lib/bootstrap/css/bootstrap.min.css"></link>
+	    <link rel="stylesheet" href="js/lib/bootstrap-modal/css/bootstrap-modal-bs3patch.css"></link>	
+	    <link rel="stylesheet" href="css/sticky-footer-navbar.css"></link>
+ 
 	    <link rel="stylesheet" href="css/wms.css"></link>
-	    <link rel="stylesheet" href="js/lib/data-tables/DT_bootstrap.css"/>
+	    <link rel="stylesheet" href="js/lib/data-tables/DT_bootstrap.css"></link>
 	    		
         <script src="js/lib/jquery-1.11.0.min.js" type="text/javascript"></script>
         <script src="js/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>

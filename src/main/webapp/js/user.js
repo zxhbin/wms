@@ -28,9 +28,9 @@ $('#user_table')
 									sTitle : '用户ID',
 									sDefault : '',
 									mRender : function(data, type, full) {
-										var template ='<a href="javascript:void(0);" onclick="editApp(DBID_)"><span>' + data + '</span></a>'; 
+										var template ='<a href="javascript:void(0);" onclick="editApp(\'DBID_\')"><span>' + data + '</span></a>'; 
 										return template = template.replace(
-												/DBID_/g, data);;
+												/DBID_/g, full.userId);;
 									}
 								},
 								{
@@ -51,10 +51,10 @@ $('#user_table')
 									sTitle : '操作',
 									sDefault : '',
 									mRender : function(data, type, full) {
-										var template = '&nbsp;&nbsp;<a class="btn blue btn-xs" href="#" onclick="editApp(DBID_);">编辑</a>';
-										template += '&nbsp;&nbsp;<a class="btn blue btn-xs" href="#" onclick="getConfirm(DBID_);">删除</a>';
+										var template = '&nbsp;&nbsp;<a class="btn blue btn-xs" href="#" onclick="editApp(\'DBID_\');">编辑</a>';
+										template += '&nbsp;&nbsp;<a class="btn blue btn-xs" href="#" onclick="getConfirm(\'DBID_\');">删除</a>';
 										return template = template.replace(
-												/DBID_/g, data);;
+												/DBID_/g, full.userId);;
 									}
 								} ],
 					});
@@ -62,6 +62,11 @@ $('#user_table')
 			"form-control input-medium input-inline");
 	$('.dataTables_length select').addClass(
 			"form-control input-xsmall input-inline");
+}
+
+function getConfirm(id){
+	$("#textId").val(id);
+	$("#confirmModalForUser").modal("show");
 }
 
 var searchUser = function(){
