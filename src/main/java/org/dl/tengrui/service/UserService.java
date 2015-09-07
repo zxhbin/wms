@@ -30,4 +30,9 @@ public class UserService {
         return userList;
     }
     
+    public long getUserCount() {
+    	
+    	return userDao.query().size();    	
+    }
+    
 }

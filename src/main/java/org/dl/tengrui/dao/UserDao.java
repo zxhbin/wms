@@ -49,7 +49,35 @@ public class UserDao {
 
     public static final String DB_USER_EMAIL = "email";
     
+    public List<User> query() {
+    	
+    	String SQL_QUERY = "select * from user order by user_id";
 
+        if (logger.isDebugEnabled()) {
+            logger.debug(SQL_QUERY);
+        }
+
+        final List<User> listAllUsers = new ArrayList<User>();
+
+        jdbcTemplate.query(SQL_QUERY, new Object[] {},
+                new ResultSetExtractor<Object>() {
+                    public Object extractData(ResultSet rs)
+                            throws SQLException, DataAccessException {
+                        while (rs.next()) {
+                            User user = new User();
+
+                            user.setUserId(rs.getString(DB_USER_UID));
+                            user.setUserName(rs.getString(DB_USER_NAME));
+
+                            listAllUsers.add(user);
+                        }
+                        return null;
+                    }
+                });
+
+        return listAllUsers;
+    }
+    
     public List<User> query(long start, long amount) {
 
         String SQL_QUERY = "select * from user order by user_id limit ? offset ?";

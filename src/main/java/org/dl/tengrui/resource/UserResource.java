@@ -2,20 +2,17 @@ package org.dl.tengrui.resource;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
 import javax.ws.rs.GET;
-import javax.ws.rs.HeaderParam;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import org.dl.tengrui.entity.DTDataResponse;
 import org.dl.tengrui.entity.User;
 import org.dl.tengrui.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Path("/users")
 @Controller
@@ -34,7 +31,7 @@ public class UserResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<User> getUsers(
+    public DTDataResponse getUsers(
     		@QueryParam(value = "iDisplayStart") Long start,// 开始
     		@QueryParam(value = "iDisplayLength") Long amount,
     		@QueryParam("name") final String searchText) throws Exception {
@@ -46,7 +43,15 @@ public class UserResource {
 			amount = 10L;
 		}
 		
-    	return userService.getUsers(start, amount, "");
+    	List<User> users =  userService.getUsers(start, amount, "");
+    	long totalRecord = userService.getUserCount();
+    	
+		final DTDataResponse response = new DTDataResponse();
+		response.setiTotalDisplayRecords(totalRecord);
+		response.setiTotalRecords(totalRecord);
+		response.setAaData(users);
+    	
+    	return response;
     }
 
 }
