@@ -12,14 +12,13 @@
 				<div class="row">
 					<div class="col-md-12 clearfix">
 						<div class="pull-left">
-							<a href="javascript:void(0)" class="btn blue" id="add_btn" >新增</a> 
-							<a href="javascript:void(0)" class="btn blue" id="refresh_btn">刷新</a> 
+							<a href="#" class="btn blue" id="add_btn" >新增</a> 
 						</div>
 						<div class="operation-search pull-right">
 							<form class="form-inline" role="form" id="search-form">
 								<div class="form-group">
-									<input type="text" class="form-control" id="department_input" name="user_input" placeholder="请输入用户的名称">
-									<a href="#" id="search" class="btn blue">查询</a>  
+									<input type="text" class="form-control" id="user_input" name="user_input" placeholder="请输入用户的名称">
+									<a href="#" id="search" class="btn blue" onclick="searchUser();">查询</a>  
 								</div>
 							</form>
 						</div>

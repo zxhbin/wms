@@ -13,10 +13,12 @@
 	    <link href="js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />	
 	    <link rel="stylesheet" href="css/sticky-footer-navbar.css"></link> 
 	    <link rel="stylesheet" href="css/wms.css"></link>
+	    <link rel="stylesheet" href="js/lib/data-tables/DT_bootstrap.css"/>
 	    		
         <script src="js/lib/jquery-1.11.0.min.js" type="text/javascript"></script>
         <script src="js/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/lib/data-tables/jquery.dataTables.min.js" type="text/javascript" ></script>
+        <script src="js/lib/data-tables/DT_bootstrap.js" type="text/javascript" ></script>
         <script src="js/lib/doT.min.js" type="text/javascript"></script>
         <script src="js/home.js" type="text/javascript"></script>
         <script src="js/user.js" type="text/javascript"></script>

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+
 });
 
 //生成表数据
@@ -14,6 +14,7 @@ $('#user_table')
 						"bFilter" : false,
 						"bStateSave" : false,
 						"bAutoWidth" : false,
+						"sPaginationType":'full_numbers',
 						 fnServerParams : function(aoData) {
 							aoData.push({
 								name : 'name',
@@ -27,10 +28,9 @@ $('#user_table')
 									sTitle : '用户ID',
 									sDefault : '',
 									mRender : function(data, type, full) {
-										var template ='<a href="javascript:void(0);" onclick="editApp(DBID_)"><span>' + "ld-group-" 
-											+ data + '</span></a>'; 
-										return template.replace(/DBID_/g,
-												full.id);
+										var template ='<a href="javascript:void(0);" onclick="editApp(DBID_)"><span>' + data + '</span></a>'; 
+										return template = template.replace(
+												/DBID_/g, data);;
 									}
 								},
 								{
@@ -41,8 +41,7 @@ $('#user_table')
 									mRender : function(data, type, full) {
 										var template = '<span>' + data
 											+ '</span>';
-										return template.replace(/DBID_/g,
-												full.name);
+										return template;
 									}
 								},
 								
@@ -55,7 +54,7 @@ $('#user_table')
 										var template = '&nbsp;&nbsp;<a class="btn blue btn-xs" href="#" onclick="editApp(DBID_);">编辑</a>';
 										template += '&nbsp;&nbsp;<a class="btn blue btn-xs" href="#" onclick="getConfirm(DBID_);">删除</a>';
 										return template = template.replace(
-												/DBID_/g, full.id);
+												/DBID_/g, data);;
 									}
 								} ],
 					});
@@ -63,4 +62,8 @@ $('#user_table')
 			"form-control input-medium input-inline");
 	$('.dataTables_length select').addClass(
 			"form-control input-xsmall input-inline");
+}
+
+var searchUser = function(){
+	loadUserTable($('#user_input').val());
 }
